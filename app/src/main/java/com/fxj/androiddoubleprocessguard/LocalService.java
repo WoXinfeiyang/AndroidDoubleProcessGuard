@@ -35,6 +35,8 @@ public class LocalService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Log.i(TAG,"LocalService#onBind");
+        startService(new Intent(LocalService.this,RemoteService.class));
+        this.bindService(new Intent(LocalService.this,RemoteService.class),connection, Context.BIND_IMPORTANT);
         return mLocalBinder;
     }
 

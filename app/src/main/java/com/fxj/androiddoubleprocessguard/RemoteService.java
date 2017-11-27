@@ -34,6 +34,8 @@ public class RemoteService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Log.i(TAG,"RemoteService.onBind");
+        RemoteService.this.startService(new Intent(RemoteService.this,LocalService.class));
+        RemoteService.this.bindService(new Intent(RemoteService.this,LocalService.class),connection, Context.BIND_IMPORTANT);
         return this.mRemoteBinder;
     }
 

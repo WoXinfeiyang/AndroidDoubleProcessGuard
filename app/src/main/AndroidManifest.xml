@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fxj.androiddoubleprocessguard">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,18 +18,21 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".LocalService">
+        <service android:name=".LocalService"
+            android:permission="android.permission.BIND_JOB_SERVICE">
 
         </service>
         <service
             android:name=".RemoteService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
             android:process="com.fxj.androiddoubleprocessguard.RemoteService">
 
         </service>
 
         <service
             android:name=".GuardJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE">
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            >
 
         </service>
 
