@@ -10,7 +10,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 public class LocalService extends Service {
-    private static final String TAG="fxj1125";
+    private static final String TAG=LocalService.class.getSimpleName();
 //    private static final String TAG=LocalService.class.getSimpleName();
 
     private LocalBinder mLocalBinder;

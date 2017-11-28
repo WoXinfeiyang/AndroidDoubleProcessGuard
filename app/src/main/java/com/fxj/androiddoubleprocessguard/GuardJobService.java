@@ -17,7 +17,7 @@ import java.util.List;
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class GuardJobService extends JobService {
-    private static final String TAG="fxj1125";
+    private static final String TAG=GuardJobService.class.getSimpleName();
 
     public GuardJobService() {
     }

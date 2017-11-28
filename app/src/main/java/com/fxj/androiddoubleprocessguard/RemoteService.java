@@ -10,7 +10,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 public class RemoteService extends Service {
-    public static final String TAG="fxj1125";
+    public static final String TAG=RemoteService.class.getSimpleName();
 
     private RemoteBinder mRemoteBinder;
     private RemoteServiceConnection connection;
